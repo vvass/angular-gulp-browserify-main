@@ -12,17 +12,17 @@ var concat = require('gulp-concat');
 var runSequence = require('run-sequence');
 
 // tasks
-gulp.task('lint', function() {
-  gulp.src(['./app/**/*.js', '!./app/bower_components/**'])
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'))
-    .pipe(jshint.reporter('fail'));
-});
 gulp.task('clean', function() {
     gulp.src('./dist/*')
-      .pipe(clean({force: true}));
+        .pipe(clean({force: true}));
     gulp.src('./app/js/bundled.js')
-      .pipe(clean({force: true}));
+        .pipe(clean({force: true}));
+});
+gulp.task('lint', function() {
+    gulp.src(['./app/**/*.js', '!./app/bower_components/**'])
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'))
+        .pipe(jshint.reporter('fail'));
 });
 gulp.task('minify-css', function() {
   var opts = {comments:true,spare:true};

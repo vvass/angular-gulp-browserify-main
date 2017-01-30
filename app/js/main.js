@@ -7,8 +7,7 @@
   require('angular-animate');
   var mainCtrl = require('./controllers/mainctrl');
 
-  angular.module('SampleApp', ['ngRoute', 'ngAnimate'])
-
+  angular.module('SelfServeApp', ['ngRoute', 'ngAnimate'])
   .config([
     '$locationProvider',
     '$routeProvider',
@@ -25,7 +24,6 @@
         });
     }
   ])
-
   //Load controller
   .controller('MainController', ['$scope', mainCtrl]);
 
